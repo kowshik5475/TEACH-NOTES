@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard - Academic Vault</title>
+<link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ================= SIDEBAR ================= -->
+    <div class="sidebar" id="sidebar">
+	<div class="sidebar" id="sidebar">
+        <div class="logo-auth">
+    <img src="images/logo.png" alt="Logo">
+        <h2> TECH NOTES <h2>
+</div>
+</div>
+        <ul>
+            <li onclick="showSection('profile')">Profile</li>
+            <li onclick="showSection('materials')">Materials</li>
+            <li onclick="logout()">Logout</li>
+        </ul>
+
+    </div>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <div class="main">
+
+        <!-- ===== TOPBAR ===== -->
+        <div class="topbar">
+            <button onclick="toggleSidebar()">☰</button>
+            <button onclick="toggleMode()">🌙</button>
+        </div>
+
+
+        <!-- ================= PROFILE SECTION ================= -->
+        <div id="profile" class="section">
+
+            <h2>Profile</h2>
+
+            <p><strong>Username:</strong> 
+                <span id="profileName"></span>
+            </p>
+
+            <p><strong>Branch:</strong> 
+                <span id="profileBranch"></span>
+            </p>
+
+            <p><strong>Year:</strong> 
+                <span id="profileYear"></span>
+            </p>
+
+            <p><strong>Semester:</strong> 
+                <span id="profileSem"></span>
+            </p>
+
+        </div>
+
+
+        <!-- ================= MATERIALS SECTION ================= -->
+        <div id="materials" class="section hidden">
+
+            <h2>Available Materials</h2>
+
+            <!-- SEARCH -->
+            <input 
+                type="text" 
+                id="search" 
+                placeholder="Search materials..."
+            >
+
+            <!-- SORT -->
+            <select id="sort">
+                <option value="">Sort By</option>
+                <option value="year">Year</option>
+                <option value="branch">Branch</option>
+                <option value="az">A-Z</option>
+            </select>
+
+            <!-- TABLE -->
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Year</th>
+                        <th>Sem</th>
+                        <th>Branch</th>
+                        <th>View</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tableBody">
+                    <!-- JS will insert rows here -->
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="student.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - Academic Vault</title>
+<link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+<div class="container">
+<a href="landing.html" class="back-arrow">← Back</a>
+<div class="logo-auth">
+    <img src="images/logo.png" alt="Logo">
+    <h2>TEACH NOTES</h2>
+</div>
+    <h2>Register</h2>
+    <div class="role-select">
+        <button onclick="selectRole('student')">Student</button>
+        <button onclick="selectRole('lecturer')">Lecturer</button>
+    </div>
+
+    <form id="registerForm">
+
+        <div id="studentFields" class="student-fields">
+            <select id="year">
+                <option value="">Select Year</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+
+            <select id="sem">
+                <option value="">Select Semester</option>
+                <option>1</option>
+                <option>2</option>
+            </select>
+
+            <select id="branch">
+                <option value="">Select Branch</option>
+                <option>CSE</option>
+                <option>ECE</option>
+                <option>EEE</option>
+                <option>MECH</option>
+                <option>CIVIL</option>
+                <option>IT</option>
+	        <option>CAI</option>
+    		<option>CSD</option>
+    		<option>CSM</option>
+            </select>
+        </div>
+
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+
+        <button type="submit" class="main-btn">Register</button>
+    </form>
+
+    <div id="message"></div>
+
+    <div class="bottom-links">
+        <a href="login.html">Login</a>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

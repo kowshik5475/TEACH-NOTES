@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lecturer Dashboard</title>
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo-auth">
+    <img src="images/logo.png" alt="Logo">
+    <h2>TEACH NOTES</h2>
+</div>
+        <ul>
+            <li onclick="showSection('profile')">Profile</li>
+            <li onclick="showSection('upload')">Upload</li>
+            <li onclick="showSection('library')">Library</li>
+            <li onclick="logout()">Logout</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <button onclick="toggleSidebar()">☰</button>
+            <div>
+                <button onclick="toggleMode()">🌙</button>
+            </div>
+        </div>
+
+        <!-- PROFILE -->
+        <div id="profile" class="section">
+            <h2>Profile</h2>
+            <p><strong>Username:</strong> <span id="profileName"></span></p>
+            <p><strong>No. of Uploads:</strong> <span id="uploadCount"></span></p>
+        </div>
+
+        <!-- UPLOAD -->
+        <div id="upload" class="section hidden">
+            <h2>Upload Material</h2>
+	<div class="row">
+    <select id="year">
+        <option value="">Select Year</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+
+    <select id="sem">
+        <option value="">Select Semester</option>
+        <option value="1">Semester 1</option>
+        <option value="2">Semester 2</option>
+    </select>
+</div>
+            <select id="branch">
+    <option value="">Select Branch</option>
+    <option value="CSE">CSE</option>
+    <option value="ECE">ECE</option>
+    <option value="CAI">CAI</option>
+    <option value="CSD">CSD</option>
+    <option value="CSM">CSM</option>
+    <option value="IT">IT</option>
+    <option value="CIVIL">CIVIL</option>
+    <option value="MECH">MECH</option>
+	</select>
+            <input type="text" id="title" placeholder="Title">
+            <input type="file" id="pdfFile" accept="application/pdf">
+            <button onclick="addMaterial()">Add Material</button>
+            <p id="uploadMsg"></p>
+        </div>
+
+        <!-- LIBRARY -->
+        <div id="library" class="section hidden">
+            <h2>Library</h2>
+
+            <input type="text" id="search" placeholder="Search..." onkeyup="renderTable()">
+
+            <select id="sort" onchange="renderTable()">
+                <option value="">Sort By</option>
+                <option value="year">Year</option>
+                <option value="branch">Branch</option>
+                <option value="date">Date</option>
+                <option value="az">A-Z</option>
+            </select>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Year</th>
+                        <th>Sem</th>
+                        <th>Branch</th>
+                        <th>Date</th>
+                        <th>View</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<!-- PDF VIEW MODAL -->
+<div id="pdfModal" class="pdf-modal hidden">
+    <div class="pdf-content">
+        <span class="close-btn" onclick="closePDF()">✖</span>
+        <iframe id="pdfFrame"></iframe>
+    </div>
+</div>
+<script src="lecturer.js"></script>
+
+</body>
+</html>

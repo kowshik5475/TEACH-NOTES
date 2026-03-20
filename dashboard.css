@@ -1,0 +1,257 @@
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0px 0px 0px 0px;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+/* ===== BODY ===== */
+body{
+    background:#fff7f0;   /* soft light orange */
+}
+
+/* ===== LAYOUT ===== */
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+    width:240px;
+    background:linear-gradient(180deg,#ff914d,#ff7a1a);
+    color:white;
+    padding:25px 15px;
+    transition:0.3s;
+}
+
+.sidebar h2{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:20px;
+    letter-spacing:1px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    padding:12px 15px;
+    margin-bottom:10px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.sidebar li:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+/* Collapse */
+.sidebar.collapsed{
+    width:0;
+    padding:0;
+    overflow:hidden;
+}
+
+.sidebar.collapsed h2{
+    display:none;
+}
+
+/* ===== MAIN ===== */
+.main{
+    flex:1;
+    padding:30px;
+    background:#fffaf5;
+    transition:0.3s ease;
+}
+
+/* ===== TOPBAR ===== */
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.topbar button{
+    background:#ff7a1a;
+    color:white;
+    border:none;
+    padding:8px 14px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.topbar button:hover{
+    background:#e56700;
+}
+body.dark{
+    background:#2c2f33;
+    color:#e4e6eb;
+}
+
+body.dark .topbar{
+    background:#3a3f44;
+    color:#ffffff;
+}
+
+body.dark .sidebar{
+    background:#35393e;
+}
+
+body.dark .sidebar a{
+    color:#e4e6eb;
+}
+
+body.dark .sidebar a:hover{
+    background:#40444b;
+}
+
+body.dark button{
+    background:#555;
+    color:white;
+}
+
+body.dark input{
+    background:#444;
+    color:white;
+    border:1px solid #666;
+}
+
+/* ===== SECTION CARD ===== */
+.section{
+    background:white;
+    padding:25px;
+    border-radius:14px;
+    box-shadow:0 6px 18px rgba(255,122,26,0.15);
+    margin-bottom:20px;
+}
+
+/* ===== FORM ELEMENTS ===== */
+.section input,
+.section select{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:8px;
+    border:1px solid #ffd9c2;
+    transition:0.3s;
+}
+
+.section input:focus,
+.section select:focus{
+    border-color:#ff7a1a;
+    outline:none;
+    box-shadow:0 0 0 2px rgba(255,122,26,0.2);
+}
+
+/* ===== BUTTON ===== */
+.section button{
+    width:100%;
+    padding:12px;
+    background:linear-gradient(45deg,#ff914d,#ff7a1a);
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.section button:hover{
+    background:linear-gradient(45deg,#ff7a1a,#e56700);
+    transform:translateY(-2px);
+}
+
+/* ===== ROW ===== */
+.row{
+    display:flex;
+    gap:15px;
+}
+
+/* ===== TABLE ===== */
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 6px 20px rgba(255,122,26,0.15);
+}
+
+th{
+    background:linear-gradient(45deg,#ff914d,#ff7a1a);
+    color:white;
+    padding:14px;
+    text-align:center;
+}
+
+td{
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #ffe5d6;
+}
+
+tr:nth-child(even){
+    background:#fff3eb;
+}
+
+tr:hover{
+    background:#ffe0cc;
+    transition:0.3s;
+}
+
+/* ===== TABLE BUTTONS ===== */
+.view-btn{
+    background:#ff914d;
+    color:white;
+    border:none;
+    padding:6px 14px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.view-btn:hover{
+    background:#e56700;
+}
+
+.delete-btn{
+    background:#ff4d4d;
+    color:white;
+    border:none;
+    padding:6px 14px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.delete-btn:hover{
+    background:#cc0000;
+}
+
+/* ===== HIDDEN ===== */
+.hidden{
+    display:none;
+}
+
+.logo-auth{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+}
+.logo-auth img{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+    filter:drop-shadow(0 0 8px rgba(255, 170, 0, 0.6));
+}
+.logo-auth h2{
+    font-size:22px;
+    line-height:1.2;
+    margin:0;
+}
